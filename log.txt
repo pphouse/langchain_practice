@@ -1,0 +1,15 @@
+以下が、PythonでBitcoinの現在価格を日本円に換算するコードです。
+
+```python
+import requests
+
+# APIから現在のBitcoin価格を取得する
+response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+data = response.json()
+price = data['bpi']['JPY']['rate_float']
+
+# 結果を出力する
+print('現在のBitcoin価格は、{:,.0f}円です。'.format(price))
+```
+
+このコードでは、`requests`モジュールを使用して、CoinDeskのAPIから現在のBitcoin価格を取得しています。取得した価格は、日本円に換算されています。最後に、結果を出力しています。
